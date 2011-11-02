@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Baltimore City Budget</title>
+    <link href="/Content/Site.css" rel="stylesheet" type="text/css" />
+    
+    <link type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/base/jquery-ui.css" rel="stylesheet" />
+    <style type="text/css">
+    .budget-section
+    {
+    	max-width: 320px;
+    }
+    .float-budget-right .budget-section
+    {
+    	float: right;
+    }
+    .float-budget-left .budget-section
+    {
+    	float: left;
+    }
+    .budget-list .ui-selectee, .budget-list .ui-selecting, .budget-list .ui-selected 
+    {
+    	position: relative;
+    	cursor: pointer;
+    	padding: 1em 20px 0 20px;
+    	border: 1px solid #eeeeee;
+    	margin-right: 10px;
+    	margin-bottom: 10px;
+    }
+	.budget-list .ui-selecting { background: #FECA40; }
+	.budget-list .ui-selected { background: #F39814; color: white; }
+	.amount 
+	{
+		position: absolute;
+		top: 0;
+		right: 20px;
+	}
+    </style>
+    
+</head>
+
+<body>
+    <div style="max-width: 1000px; margin: auto;">
+        <h1>Baltimore City Budget</h1>
+    </div>
+
+    
+
+
+
+<div style="max-width: 1000px; margin: auto; clear: both;">
+    <p>The City of Baltimore faces a budget shortfall. The choices to balance the budget are difficult, because the City has already 
+    instituted spending freezes, cuts, and revenue measures in previous years. How will you balance the budget this year?</p>
+</div>
+
+<div style="clear: both"></div>
+
+<div class="float-budget-right" style="max-width: 1650px; margin: auto; clear: both;">
+        <div class="budget-section">
+        <h2>Other City Services</h2>
+
+        <div class="budget-list">
+            <div class="ui-selected ui-widget-content" data-amount="-1" data-category="Spending Cuts" data-totaled=&quot;true&quot;>
+                <h3>Reduce 311 Call Center Hours</h3>
+                <span class="amount">-1.00M</span>
+                <p>Reduce 311 call center hours. Call Centers currently operate 16 hours a day. The new schedule would be ten hours a day Monday thru Friday and eight hours a day on the weekends, with the 311 service also offered online. </p>
+            </div>
+            <div class="ui-selected ui-widget-content" data-amount="-0.5" data-category="Spending Cuts" data-totaled=&quot;true&quot;>
+                <h3>Turn Off City Cable TV</h3>
+                <span class="amount">-0.50M</span>
+                <p>Turn off the City cable television channel.</p>
+            </div>
+            <div class="ui-selected ui-widget-content" data-amount="-0.5" data-category="Spending Cuts" data-totaled=&quot;true&quot;>
+                <h3>Reduce Custodial Service in City Facilities</h3>
+                <span class="amount">-0.50M</span>
+                <p>Reduce custodial services in City buildings and leave more building maintenance as the responsibility of employees (throwing away trash in common receptacles, shutting off lights, etc.).</p>
+            </div>
+            <div class="ui-selected ui-widget-content" data-amount="-3.5" data-category="Spending Cuts" data-totaled=&quot;true&quot;>
+                <h3>Reduce Street Repair</h3>
+                <span class="amount">-3.50M</span>
+                <p>Reduce street repair and resurfacing. This would reduce the number of lane miles resurfaced by in house crews from 50 to 24 per year and lengthen response times for pothole repairs. </p>
+            </div>
+            <div class="ui-selected ui-widget-content" data-amount="-3" data-category="Spending Cuts" data-totaled=&quot;true&quot;>
+                <h3>Discontinue Support for Small &amp; Emerging Businesses</h3>
+                <span class="amount">-3.00M</span>
+                <p>Discontinue support for programs to nurture small and emerging businesses.</p>
+            </div>
+            <div class="ui-selected ui-widget-content" data-amount="-5" data-category="Spending Cuts" data-totaled=&quot;true&quot;>
+                <h3>Cut agency admin budgets</h3>
+                <span class="amount">-5.00M</span>
+                <p> Cut agency administrative budgets by 10%. This would impact fiscal, human resources, information technology and other functions that support front-line services.</p>
+            </div>
+            <div class="ui-selected ui-widget-content" data-amount="-1" data-category="Spending Cuts" data-totaled=&quot;true&quot;>
+                <h3>Reduce Election Funding</h3>
+                <span class="amount">-1.00M</span>
+                <p>Reduce funding for the conduct of elections. Doing so will likely reduce polling sites and lead to longer lines during elections.</p>
+            </div>
+            <div class="ui-selected ui-widget-content" data-amount="-1" data-category="Spending Cuts" data-totaled=&quot;true&quot;>
+                <h3>Reduce Convention Center Funding</h3>
+                <span class="amount">-1.00M</span>
+                <p>Reduce funding for Convention Center improvements.</p>
+            </div>
+        </div>
+    </div>
+
+        <div class="budget-section">
+        <h2>Public Safety</h2>
+
+        <div class="budget-list">
+            <div class="ui-selected ui-widget-content" data-amount="-13" data-category="Spending Cuts" data-totaled=&quot;true&quot;>
+                <h3>Freeze police hiring 250 fewer hires</h3>
+                <span class="amount">-13.00M</span>
+                <p>Freeze police hiring in FY 2012. This would mean 250 fewer hires than planned and leave the police force nearly 10% below authorized strength. This action would reduce police presence in neighborhoods and have a severe impact on the City’s crime fighting efforts.</p>
+            </div>
+            <div class="ui-selected ui-widget-content" data-amount="-1" data-category="Spending Cuts" data-totaled=&quot;true&quot;>
+                <h3>Eliminate Police Marine Unit</h3>
+                <span class="amount">-1.00M</span>
+                <p>Eliminate the Police marine unit and rely on the Fire Department, State DNR and US Coast Guard to respond to emergencies on the water.</p>
+            </div>
+            <div class="ui-selected ui-widget-content" data-amount="-0.5" data-category="Spending Cuts" data-totaled=&quot;true&quot;>
+                <h3>Eliminate Mounted Police Unit</h3>
+                <span class="amount">-0.50M</span>
+                <p>Eliminate the Police mounted horse unit. The mounted unit is used for crowd control, riot response, and ceremonial appearances.</p>
+            </div>
+            <div class="ui-selected ui-widget-content" data-amount="-0.5" data-category="Spending Cuts" data-totaled=&quot;true&quot;>
+                <h3>Eliminate Special Traffic Enforcement Officers</h3>
+                <span class="amount">-0.50M</span>
+                <p> Eliminate special enforcement officers. This will increase police overtime pay for emergency situations and special events. </p>
+            </div>
+            <div class="ui-selected ui-widget-content" data-amount="-4" data-category="Spending Cuts" data-totaled=&quot;true&quot;>
+                <h3>Fire Company Closures</h3>
+                <span class="amount">-4.00M</span>
+                <p>Permanently close the five least busy fire companies. The City is already operating rotating closures of three companies. Permanent closures would be made so as to minimize the impact on response times, but response times would suffer.</p>
+            </div>
+            <div class="ui-selected ui-widget-content" data-amount="-2" data-category="Spending Cuts" data-totaled=&quot;true&quot;>
+                <h3>Reduce Street Light Maintenance</h3>
+                <span class="amount">-2.00M</span>
+                <p>Reduce street light maintenance and repair. Street lighting experienced a cut of $2.5 million in FY 2011. Further reductions in maintenance could create a large backlog of repair jobs that significantly reduce the quality of city lighting.</p>
+            </div>
+        </div>
+    </div>
+
+        <div class="budget-section">
+        <h2>Public Works</h2>
+
+        <div class="budget-list">
+            <div class="ui-selected ui-widget-content" data-amount="-0.5" data-category="Spending Cuts" data-totaled=&quot;true&quot;>
+                <h3>Reduce Graffiti Removal</h3>
+                <span class="amount">-0.50M</span>
+                <p>Reduce graffiti removal and seek community volunteers to remove graffiti in public places. There are currently l9 City positions responsible for graffiti removal.</p>
+            </div>
+            <div class="ui-selected ui-widget-content" data-amount="-1.5" data-category="Spending Cuts" data-totaled=&quot;true&quot;>
+                <h3>Eliminate Business District Cleaning</h3>
+                <span class="amount">-1.50M</span>
+                <p>Eliminate business district cleaning outside of downtown and rely on merchants associations to pay for the services.</p>
+            </div>
+            <div class="ui-selected ui-widget-content" data-amount="-3" data-category="Spending Cuts" data-totaled=&quot;true&quot;>
+                <h3>Contract Mowing of Median Strips</h3>
+                <span class="amount">-3.00M</span>
+                <p>Contract out the mowing of median strips. A contract would greatly reduce costs, though it would displace up to 32 City workers.</p>
+            </div>
+            <div class="ui-selected ui-widget-content" data-amount="-1" data-category="Spending Cuts" data-totaled=&quot;true&quot;>
+                <h3>Discontinue Leaf Collection</h3>
+                <span class="amount">-1.00M</span>
+                <p>Discontinue leaf collection. City residents would instead be responsible for composting or disposing leaves. Leaves that are not properly disposed of can increase stormwater runoff, block drainage of water, and clog water drainage systems.</p>
+            </div>
+            <div class="ui-selected ui-widget-content" data-amount="-1" data-category="Spending Cuts" data-totaled=&quot;true&quot;>
+                <h3>Reduce Boarding &amp; Cleaning of Vacant Properties</h3>
+                <span class="amount">-1.00M</span>
+                <p>Reduce boarding and cleaning of vacant and abandoned properties. Vacant properties become locations for pests and transient populations if left unclean and unattended, affecting nearby properties. They can also become locations for illegal dumping.</p>
+            </div>
+        </div>
+    </div>
+
+        <div class="budget-section">
+        <h2>City Employees &amp; Retirees</h2>
+
+        <div class="budget-list">
+            <div class="ui-selected ui-widget-content" data-amount="-6" data-category="Spending Cuts" data-totaled=&quot;true&quot;>
+                <h3>Increase Deductibles and Co-Pays in employee health insurance plans</h3>
+                <span class="amount">-6.00M</span>
+                <p>Increase co-pays and deductibles in retiree health insurance and prescription drug plans, bringing them more in line with neighboring counties.</p>
+            </div>
+            <div class="ui-selected ui-widget-content" data-amount="-4" data-category="Spending Cuts" data-totaled=&quot;true&quot;>
+                <h3>Stricter health benefit controls</h3>
+                <span class="amount">-4.00M</span>
+                <p>Place stricter controls on the use of health benefits, such as prior authorization, drug quantity limits, and case management.</p>
+            </div>
+            <div class="ui-selected ui-widget-content" data-amount="-7" data-category="Spending Cuts" data-totaled=&quot;true&quot;>
+                <h3>Increase the Portion of Health Insurance Premiums Paid by Retirees</h3>
+                <span class="amount">-7.00M</span>
+                <p>Increase the portion of health insurance premiums paid by employees from 10-20% to 20-30%, depending on the plan they choose.</p>
+            </div>
+            <div class="ui-selected ui-widget-content" data-amount="-9" data-category="Spending Cuts" data-totaled=&quot;true&quot;>
+                <h3>Freeze Pay for All but Lowest Paid Employees</h3>
+                <span class="amount">-9.00M</span>
+                <p>Freeze pay for all but the lowest paid employees in Fiscal Year (FY) 2012. Pay was frozen for all employees in FY 2011.</p>
+            </div>
+            <div class="ui-selected ui-widget-content" data-amount="-10" data-category="Spending Cuts" data-totaled=&quot;true&quot;>
+                <h3>Continue Furlough Plan</h3>
+                <span class="amount">-10.00M</span>
+                <p>Continue the current furlough plan, which requires employees to take between four and eleven unpaid days off, depending on their salary.</p>
+            </div>
+        </div>
+    </div>
+
+        <div class="budget-section">
+        <h2>Parks &amp; Recreation</h2>
+
+        <div class="budget-list">
+            <div class="ui-selected ui-widget-content" data-amount="-1.5" data-category="Spending Cuts" data-totaled=&quot;true&quot;>
+                <h3>Reduce City Park Maintenance</h3>
+                <span class="amount">-1.50M</span>
+                <p>Reduce trash collection and ballfield and playground maintenance in City parks. Maintenance efforts would be reduced by 57%, continuing only for facilities programmed by the Baltimore City Recreation and Parks Department.</p>
+            </div>
+            <div class="ui-selected ui-widget-content" data-amount="-1" data-category="Spending Cuts" data-totaled=&quot;true&quot;>
+                <h3>Close All But 6 City Pools</h3>
+                <span class="amount">-1.00M</span>
+                <p>Close neighborhood swimming pools and operate only the six large park pools. In FY10, 62,000 City residents used these facilities, or about 10% of the population. The park pools have much higher use rates than the neighborhood pools. </p>
+            </div>
+            <div class="ui-selected ui-widget-content" data-amount="-3.5" data-category="Spending Cuts" data-totaled=&quot;true&quot;>
+                <h3>Reduce Funding for After-School &amp; Sports Programs</h3>
+                <span class="amount">-3.50M</span>
+                <p>Reduce funding for after-school and sports programs for youth.</p>
+            </div>
+            <div class="ui-selected ui-widget-content" data-amount="-3" data-category="Spending Cuts" data-totaled=&quot;true&quot;>
+                <h3>Close Some Rec. Centers &amp; Improve Remainder</h3>
+                <span class="amount">-3.00M</span>
+                <p>Close the least utilized recreation centers and improve the centers that remain open. The City currently operates 55 centers, a number which has not changed much with population loss. This leaves a large number of centers with shoestring budgets, insufficient staff, and deficient program conditions. Redirecting some savings can improve the quality of programs at those recreation centers which remain open. </p>
+            </div>
+        </div>
+    </div>
+
+        <div class="budget-section">
+        <h2>Arts &amp; Learning</h2>
+
+        <div class="budget-list">
+            <div class="ui-selected ui-widget-content" data-amount="-5" data-category="Spending Cuts" data-totaled=&quot;true&quot;>
+                <h3>Close 5 Libraries / Reduce Hours</h3>
+                <span class="amount">-5.00M</span>
+                <p>Close the five least busy libraries and reduce hours at other branches. There are currently 22 library locations, so shutting down 5 will reduce access in the affected neighborhoods. Discontinuing services at loweruse locations permits the City to maintain better hours at other locations and buy books and materials for the smaller network.</p>
+            </div>
+            <div class="ui-selected ui-widget-content" data-amount="-2.5" data-category="Spending Cuts" data-totaled=&quot;true&quot;>
+                <h3>Reduce / Eliminate Grants to Museums &amp; Orchestra</h3>
+                <span class="amount">-2.50M</span>
+                <p> Reduce or eliminate grants to the City’s art museums and symphony orchestra, requiring them to charge (more) for services, raise more outside funds, or cut back the programs they offer.</p>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div style="clear: both"></div>
+
+<div class="float-budget-left" style="max-width: 700px; margin: auto; clear: both;">
+        <div class="budget-section">
+        <h2>Revenue</h2>
+
+        <div class="budget-list">
+            <div class=" ui-widget-content" data-amount="1" data-category="New Revenue" >
+                <h3>Bulk Trash Service Fee</h3>
+                <span class="amount">1.00M</span>
+                <p>Charge residents for bulk trash pickup. Residents could drop their trash at any of five locations if they do not want to pay the fee.</p>
+            </div>
+            <div class=" ui-widget-content" data-amount="7" data-category="New Revenue" >
+                <h3>Two Cent Property Tax Increase</h3>
+                <span class="amount">7.00M</span>
+                <p>Increase the property tax rate by two cents per $100. The current rate in Baltimore is $2.268 per $100, the highest in the State of Maryland and more than double neighboring Baltimore County.</p>
+            </div>
+            <div class=" ui-widget-content" data-amount="1" data-category="New Revenue" >
+                <h3>Introduce a Billboard Tax</h3>
+                <span class="amount">1.00M</span>
+                <p>Introduce a tax on billboards. There is currently no tax on billboard.</p>
+            </div>
+            <div class=" ui-widget-content" data-amount="1" data-category="New Revenue" >
+                <h3>Grocery Bag Tax</h3>
+                <span class="amount">1.00M</span>
+                <p>Introduce a five cent tax on plastic grocery bags, with exemptions for WIC and food stamp recipients. The tax would discourage the use of environmentally unfriendly plastic bags. </p>
+            </div>
+            <div class=" ui-widget-content" data-amount="4" data-category="New Revenue" >
+                <h3>Increase Beverage Tax to 4 cents per dollar</h3>
+                <span class="amount">4.00M</span>
+                <p>Increase the beverage tax from two to four cents per container, exempting milk, juice and containers larger than 2 liters. This tax was just introduced in 2010.</p>
+            </div>
+            <div class=" ui-widget-content" data-amount="1" data-category="New Revenue" >
+                <h3>$1 Fee for Circulator</h3>
+                <span class="amount">1.00M</span>
+                <p> Charge $1 to ride the Charm City Circulator bus, which is currently free. The Charm City Circulator provides free access to downtown and certain neighborhoods for tourists and City residents.</p>
+            </div>
+            <div class=" ui-widget-content" data-amount="8" data-category="New Revenue" >
+                <h3>Stormwater Fee</h3>
+                <span class="amount">8.00M</span>
+                <p>Charge residents a stormwater fee based on property size to pay for projects that help the City meet federal clean water mandates.</p>
+            </div>
+            <div class=" ui-widget-content" data-amount="5" data-category="New Revenue" >
+                <h3>Increase Energy Tax by 25%</h3>
+                <span class="amount">5.00M</span>
+                <p>Increase the Energy Tax by 25%. This tax appears on a City resident&#39;s home energy bill, and was increased last year by 15%. The higher rate would cost the typical resident about $5 more a month and could promote energy conservation.</p>
+            </div>
+        </div>
+    </div>
+
+        <div class="budget-section">
+        <h2>Spending Increases</h2>
+
+        <div class="budget-list">
+            <div class=" ui-widget-content" data-amount="-4" data-category="New Spending" >
+                <h3>Stop Rotating Fire Company Closures</h3>
+                <span class="amount">-4.00M</span>
+                <p>Eliminate rotating fire company closures. The current plan temporarily closes three fire companies at a time on a rotating basis.</p>
+            </div>
+            <div class=" ui-widget-content" data-amount="-2.5" data-category="New Spending" >
+                <h3>Increase Fudning for After-School Programs</h3>
+                <span class="amount">-2.50M</span>
+                <p>Increase funding for after-school programs.</p>
+            </div>
+            <div class=" ui-widget-content" data-amount="-2" data-category="New Spending" >
+                <h3>Fully Fund Prosecutors</h3>
+                <span class="amount">-2.00M</span>
+                <p>Fully fund prosecutor positions in the State Attomey’s office. Positions have been frozen for three years.</p>
+            </div>
+            <div class=" ui-widget-content" data-amount="-2.5" data-category="New Spending" >
+                <h3>Increase Lane Miles Resurfaced</h3>
+                <span class="amount">-2.50M</span>
+                <p>Increase the number of lane miles resurfaced.</p>
+            </div>
+            <div class=" ui-widget-content" data-amount="-1.5" data-category="New Spending" >
+                <h3>Restore Tree Planting &amp; Maintenance</h3>
+                <span class="amount">-1.50M</span>
+                <p>Restore tree planting and maintenance.</p>
+            </div>
+            <div class=" ui-widget-content" data-amount="-1" data-category="New Spending" >
+                <h3>Increase Funding for Economic Development</h3>
+                <span class="amount">-1.00M</span>
+                <p>Increase funding for economic development. Development activities include business retention and attraction, job creation, and enhancing neighborhood main streets.</p>
+            </div>
+            <div class=" ui-widget-content" data-amount="-1" data-category="New Spending" >
+                <h3>Extend City Pool Season</h3>
+                <span class="amount">-1.00M</span>
+                <p>Extend the City pool season to ten weeks. The current budget supports a six week season from late June to mid-August </p>
+            </div>
+            <div class=" ui-widget-content" data-amount="-7" data-category="New Spending" >
+                <h3>Reduce Property Tax by Two Cents</h3>
+                <span class="amount">-7.00M</span>
+                <p>Reduce the property tax rate by two cents per $100.</p>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div style="clear: both"></div>
+
+<div style="max-width: 1000px; margin: auto; clear: both;">
+    <div>
+        <!-- <p>The items to the right represent new revenue measures and spending increases.  New revenue measures will help reduce the budget gap, 
+        but only by drawing more in taxes and fees from City Residents.  Spending increases, by contrast, will increase the budget gap, so these
+        options should only be chosen if you are willing to make cuts elsewhere to offset the new costs.
+        </p> -->
+
+        <h2>Totals</h2>
+        
+        <table id="totalTable" style="width: 80%">
+            <tbody>
+                    <tr>
+                        <td style="font-size: 150%">Spending Cuts</td>
+                        <td data-categoryTarget="Spending Cuts" style="font-weight: bold; font-size: 150%; text-align: right;">0M</td>
+                    </tr>
+                    <tr>
+                        <td style="font-size: 150%">New Revenue</td>
+                        <td data-categoryTarget="New Revenue" style="font-weight: bold; font-size: 150%; text-align: right;">0M</td>
+                    </tr>
+                    <tr>
+                        <td style="font-size: 150%">New Spending</td>
+                        <td data-categoryTarget="New Spending" style="font-weight: bold; font-size: 150%; text-align: right;">0M</td>
+                    </tr>
+                <tr>
+                    <td style="font-size: 150%">Total Shortfall</td>
+                    <td style="border-top: 1px solid #000000; font-size: 150%; text-align: right;" id="grandTotal">-80M</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p>Bring the total shortfall to <strong>zero (or greater)</strong> to successfully close the Budget Gap.</p>
+
+        <p>Budget amounts are rounded estimates for this exercise. These options do not represent policy decisions. 
+        This exercise is meant to be illustrative of the kind of decisions the Mayor has to consider.</p>
+    </div>
+</div>
+
+
+
+
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
+    <script>
+        (function () {
+            var totals = {};
+            var grandTotal = -80.0;
+
+            var updateTotal = function (cat, amount) {
+                if (!totals[cat]) totals[cat] = 0;
+
+                totals[cat] += amount;
+                grandTotal += amount;
+
+                $('#totalTable [data-categoryTarget="' + cat + '"]').html(totals[cat] + 'M');
+                $('#grandTotal').html(grandTotal + 'M');
+            };
+
+            $('div.budget-list').bind("mousedown", function (e) {
+                e.metaKey = true;
+            }).selectable({
+                filter: '>div',
+                autoRefresh: false,
+                selected: function (event, ui) {
+                    var el = $(ui.selected);
+
+                    if (el.data('totaled')) return;
+                    el.data('totaled', true);
+
+                    var cat = el.data('category');
+                    var amount = parseFloat(el.data('amount'));
+
+                    updateTotal(cat, amount);
+                },
+                unselected: function (event, ui) {
+                    var el = $(ui.unselected);
+
+                    if (!el.data('totaled')) return;
+                    el.data('totaled', false);
+
+                    var cat = el.data('category');
+                    var amount = -1 * parseFloat(el.data('amount'));
+
+                    updateTotal(cat, amount);
+                }
+            });
+        })();
+    </script>
+
+</body>
+</html>

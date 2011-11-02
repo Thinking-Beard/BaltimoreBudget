@@ -1,0 +1,170 @@
+﻿@model List<BaltimoreBudget.Web.Models.BudgetItemModel>
+
+@{
+    ViewBag.Title = "Baltimore City Budget";
+
+    var groups = Model.GroupBy(i => i.BudgetGroup).ToDictionary(g => g.Key, g => g.ToList());
+    var totals = Model.Select(i => i.TotalCategory).Distinct().ToList();
+}
+
+@helper DisplayGroup(string key, IDictionary<string, List<BaltimoreBudget.Web.Models.BudgetItemModel>> groups)
+{
+    <div class="budget-section">
+        <h2>@key</h2>
+
+        <div class="budget-list">
+        @foreach (var i in groups[key])
+        {
+            <div class="@(i.Selected ? "ui-selected" : "") ui-widget-content" data-amount="@i.Amount" data-category="@i.TotalCategory" @(i.Selected ? "data-totaled=\"true\"" : "")>
+                <h3>@i.Title</h3>
+                <span class="amount">@i.Amount.ToString("F")M</span>
+                <p>@i.Description</p>
+            </div>
+        }
+        </div>
+    </div>
+}
+
+<div style="max-width: 1000px; margin: auto;">
+    <p>The City of Baltimore faces a budget shortfall. The choices to balance the budget are difficult, because the City has already 
+    instituted spending freezes, cuts, and revenue measures in previous years. How will you balance the budget this year?</p>
+</div>
+
+<div style="clear: both"></div>
+
+<div class="float-budget-right" style="max-width: 1650px; margin: auto;">
+    @DisplayGroup("Other City Services", groups)
+    @DisplayGroup("Public Safety", groups)
+    @DisplayGroup("Public Works", groups)
+    @DisplayGroup("City Employees & Retirees", groups)
+    @DisplayGroup("Parks & Recreation", groups)
+    @DisplayGroup("Arts & Learning", groups)
+</div>
+
+<div style="clear: both"></div>
+
+<div class="float-budget-left" style="max-width: 700px; margin: auto;">
+    @DisplayGroup("Revenue", groups)
+    @DisplayGroup("Spending Increases", groups)
+</div>
+
+<div style="clear: both"></div>
+
+<div style="max-width: 1000px; margin: auto;">
+    <div>
+        <!-- <p>The items to the right represent new revenue measures and spending increases.  New revenue measures will help reduce the budget gap, 
+        but only by drawing more in taxes and fees from City Residents.  Spending increases, by contrast, will increase the budget gap, so these
+        options should only be chosen if you are willing to make cuts elsewhere to offset the new costs.
+        </p> -->
+
+        <h2>Totals</h2>
+        
+        <table id="totalTable" style="width: 80%">
+            <tbody>
+                @foreach (var t in totals)
+                { 
+                    <tr>
+                        <td style="font-size: 150%">@t</td>
+                        <td data-categoryTarget="@t" style="font-weight: bold; font-size: 150%; text-align: right;">0M</td>
+                    </tr>
+                }
+                <tr>
+                    <td style="font-size: 150%">Total Shortfall</td>
+                    <td style="border-top: 1px solid #000000; font-size: 150%; text-align: right;" id="grandTotal">-80M</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p>Bring the total shortfall to <strong>zero (or greater)</strong> to successfully close the Budget Gap.</p>
+
+        <p>Budget amounts are rounded estimates for this exercise. These options do not represent policy decisions. 
+        This exercise is meant to be illustrative of the kind of decisions the Mayor has to consider.</p>
+    </div>
+</div>
+
+@section CssContent
+{
+    <link type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/base/jquery-ui.css" rel="stylesheet" />
+    <style type="text/css">
+    .budget-section
+    {
+    	max-width: 320px;
+    }
+    .float-budget-right .budget-section
+    {
+    	float: right;
+    }
+    .float-budget-left .budget-section
+    {
+    	float: left;
+    }
+    .budget-list .ui-selectee, .budget-list .ui-selecting, .budget-list .ui-selected 
+    {
+    	position: relative;
+    	cursor: pointer;
+    	padding: 1em 20px 0 20px;
+    	border: 1px solid #eeeeee;
+    	margin-right: 10px;
+    	margin-bottom: 10px;
+    }
+	.budget-list .ui-selecting { background: #FECA40; }
+	.budget-list .ui-selected { background: #F39814; color: white; }
+	.amount 
+	{
+		position: absolute;
+		top: 0;
+		right: 20px;
+	}
+    </style>
+}
+
+@section ScriptContent
+{
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
+    <script>
+        (function () {
+            var totals = {};
+            var grandTotal = -80.0;
+
+            var updateTotal = function (cat, amount) {
+                if (!totals[cat]) totals[cat] = 0;
+
+                totals[cat] += amount;
+                grandTotal += amount;
+
+                $('#totalTable [data-categoryTarget="' + cat + '"]').html(totals[cat] + 'M');
+                $('#grandTotal').html(grandTotal + 'M');
+            };
+
+            $('div.budget-list').bind("mousedown", function (e) {
+                e.metaKey = true;
+            }).selectable({
+                filter: '>div',
+                autoRefresh: false,
+                selected: function (event, ui) {
+                    var el = $(ui.selected);
+
+                    if (el.data('totaled')) return;
+                    el.data('totaled', true);
+
+                    var cat = el.data('category');
+                    var amount = parseFloat(el.data('amount'));
+
+                    updateTotal(cat, amount);
+                },
+                unselected: function (event, ui) {
+                    var el = $(ui.unselected);
+
+                    if (!el.data('totaled')) return;
+                    el.data('totaled', false);
+
+                    var cat = el.data('category');
+                    var amount = -1 * parseFloat(el.data('amount'));
+
+                    updateTotal(cat, amount);
+                }
+            });
+        })();
+    </script>
+}

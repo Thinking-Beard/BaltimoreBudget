@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title</title>
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+    @RenderSection("CssContent")    
+</head>
+
+<body>
+    <div style="max-width: 1000px; margin: auto;">
+        <h1>@ViewBag.Title</h1>
+    </div>
+
+    <div style="clear: both"></div>
+
+    @RenderBody()
+    @RenderSection("ScriptContent")
+</body>
+</html>
