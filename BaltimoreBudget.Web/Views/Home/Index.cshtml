@@ -15,7 +15,7 @@
         <div class="budget-list">
         @foreach (var i in groups[key])
         {
-            <div class="@(i.Selected ? "ui-selected" : "") ui-widget-content" data-amount="@i.Amount" data-category="@i.TotalCategory" @(i.Selected ? "data-totaled=\"true\"" : "")>
+            <div class="@(i.Selected ? "ui-selected" : "") ui-widget-content" data-amount="@i.Amount" data-category="@i.TotalCategory" @(i.Selected ? "data-totaled=\"true\"" : "") data-formid="@i.FormId">
                 <h3>@i.Title</h3>
                 <span class="amount">@i.Amount.ToString("F")M</span>
                 <p>@i.Description</p>
@@ -76,6 +76,10 @@
         </table>
 
         <p>Bring the total shortfall to <strong>zero (or greater)</strong> to successfully close the Budget Gap.</p>
+
+        <p><label for="email">Email</label><input id="email" /></p>
+
+        <p><button id="saveButton" type="button">Save Choices</button></p>
 
         <p>Budget amounts are rounded estimates for this exercise. These options do not represent policy decisions. 
         This exercise is meant to be illustrative of the kind of decisions the Mayor has to consider.</p>
@@ -164,6 +168,30 @@
 
                     updateTotal(cat, amount);
                 }
+            });
+
+            $('#saveButton').click(function () {
+                var data = {};
+
+                $('.ui-selected[data-formid]').each(function (i, e) {
+                    var el = $(e);
+
+                    data[el.data('formid')] = 'Yes';
+                });
+
+                data['entry.46.single'] = $('#email').val();
+
+                $.ajax({
+                    url: 'https://docs.google.com/a/paultyng.net/spreadsheet/formResponse?formkey=dDI2V0VyN0JvNk9TcnBfcWpBcmpMY3c6MQ&amp;theme=0AX42CRMsmRFbUy1iOGYwN2U2Mi1hNWU0LTRlNjEtYWMyOC1lZmU4ODg1ODc1ODI&amp;embedded=true&amp;ifq',
+                    data: data,
+                    //type: 'post',
+                    dataType: 'jsonp',
+                    error: function () {
+                        //comes through as error due to it not really being json, this 
+                        //could be fixed by faking an actual form element and submitting it
+                        alert("Your response has been recorded");
+                    }
+                });
             });
         })();
     </script>

@@ -13,5 +13,6 @@ namespace BaltimoreBudget.Web.Models
         public string TotalCategory { get; set; }
         public string BudgetGroup { get; set; }
         public bool Selected { get; set; }
+        public string FormId { get; set; }
     }
 }
